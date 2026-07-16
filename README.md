@@ -1,8 +1,7 @@
 # AS Operator
 
-A personal, long-term flagship project — a premium digital operating system,
-not a template or client site. See [docs/VISION.md](./docs/VISION.md) for
-the full rationale.
+Adam Smolka's single-page site for his creator-monetization service. See
+[docs/VISION.md](./docs/VISION.md) for the full rationale.
 
 ## Stack
 
@@ -10,9 +9,11 @@ the full rationale.
 - [Tailwind CSS](https://tailwindcss.com)
 - [shadcn/ui](https://ui.shadcn.com)
 - [Framer Motion](https://motion.dev)
-- [React Three Fiber](https://r3f.docs.pmnd.rs) + [drei](https://github.com/pmndrs/drei)
 - [Lucide React](https://lucide.dev)
 - Package manager: [pnpm](https://pnpm.io)
+
+`three` / `@react-three/*` remain installed from an earlier direction but
+are currently unused — see VISION.md's version note.
 
 ## Getting started
 
@@ -40,16 +41,11 @@ src/
   app/                # routes (App Router)
   components/
     ui/                # shadcn/ui primitives
-    layout/            # header, footer, page shell
-    sections/          # composed page sections
-    three/              # React Three Fiber scenes
-    motion/            # Framer Motion primitives
+    layout/            # footer, sticky CTA, page shell
+    sections/          # composed page sections (Hero, FAQ, Contact, ...)
+    motion/            # Framer Motion primitives, AmbientBackground
   hooks/               # shared React hooks
-  lib/                 # framework-agnostic helpers
+  lib/                 # framework-agnostic helpers, site-config.ts
   types/               # shared TypeScript types
-  config/              # site/nav/metadata config
-public/
-  models/              # 3D assets (.glb/.gltf)
-  textures/            # texture maps / HDRIs
 docs/                  # project documentation (see table above)
 ```

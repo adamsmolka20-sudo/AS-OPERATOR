@@ -1,58 +1,67 @@
 # AS Operator — Vision
 
+> **Version note:** this revision supersedes the original "personal digital
+> operating system" concept. AS Operator is now Adam Smolka's real business
+> site — a single-page offer for a creator-monetization service — not an
+> abstract portfolio showcase. Every downstream doc (Design Bible, roadmap)
+> is rewritten to match. Nothing from the earlier "not a client website"
+> framing still applies.
+
 ## What this is
 
-AS Operator is a personal, long-term flagship project — not a client website,
-not a SaaS landing page, not a portfolio template. It is meant to function as
-a personal digital operating system: a single, cohesive surface that
-represents its owner's identity, work, and standards of craft.
+AS Operator is Adam Smolka's shadow-operator service: he builds
+done-for-you monetization systems for influencers and creators, and runs
+their first paid launch, so they get paid for the audience they already
+built. This site is the single-page pitch for that offer — real business
+content, a real contact path, a real Calendly link. It exists to book calls
+with qualified creators, not to demonstrate technique for its own sake.
 
-Because it has no client, no deadline imposed by anyone else, and no
-requirement to look like anything else on the market, it is held to a higher
-bar than commercial work: every screen should read as deliberate, restrained,
-and expensive-feeling, in the way that Apple product pages or high-end
-hardware marketing sites feel — without imitating any of them directly.
+It is still held to a high craft bar — dark, editorial, quietly confident,
+built with the same engineering discipline as any other part of this
+codebase — but the bar now serves a conversion goal, not an abstract one.
 
 ## Why it exists
 
-- To be a durable showcase of premium engineering and design judgment,
-  maintained over years rather than shipped once and abandoned.
-- To give its owner a real, evolving surface to present who they are and
-  what they build — not a static "About Me" page.
-- To serve as a proving ground for interaction techniques (3D, motion,
-  glass/light materials) applied with restraint rather than as a tech demo.
+- To convert engaged creators who haven't monetized their audience yet into
+  booked calls.
+- To position Adam as a serious, high-end operator — not a "guru," not
+  hype-y, not templated — through restraint, strong typography, and real
+  specificity about who this is and isn't for.
+- To do the qualifying work up front (see "Who this is not for") so calls
+  that do get booked are with the right people.
 
 ## Who it's for
 
-One audience: visitors evaluating the owner's taste and technical ability —
-recruiters, collaborators, clients evaluating fit, and the owner's own future
-self. Every decision should be evaluated against "does this raise or lower
-the perceived quality bar for the person behind it."
+Creators and influencers with an engaged audience (roughly 20k–100k+
+followers) who haven't turned that audience into income yet, and want
+someone to build and run the monetization system for them — not just hand
+them a course or a checklist.
 
 ## Guiding principles
 
-1. **Restraint over spectacle.** Motion, 3D, and glass effects are used
-   because they clarify or delight, never because they're technically
-   possible. If a section works better static, it should be static.
-2. **Space is a material.** Generous whitespace/negative space is a design
-   choice, not an absence of content. See [DESIGN_BIBLE.md](./DESIGN_BIBLE.md).
-3. **No borrowed aesthetics.** No cyberpunk, no "hacker terminal," no gamer
-   RGB, no generic SaaS gradients-and-blobs. The reference bar is Apple-level
-   product marketing and premium hardware brands — reinterpreted, not copied.
-4. **Performance is part of the design.** A cinematic 3D hero that jitters or
-   blocks interaction is a failure of design, not just engineering.
-5. **Built to last.** Code and content should be maintainable years from now
-   by one person working intermittently — clarity and low complexity beat
-   cleverness.
+1. **Specificity over hype.** Real numbers, real steps, real disqualifiers
+   ("who this is not for") — not vague promises. Confidence comes from
+   precision, not adjectives.
+2. **Editorial, not templated.** Strong typography and negative space carry
+   the design — no stock icons, no generic SaaS card grids, no top nav bar.
+   A single confident scroll.
+3. **Restraint over spectacle.** One accent color (gold), used sparingly.
+   Motion in the background should make the page feel alive without ever
+   distracting from the copy or the call-to-action.
+4. **Every path leads to a call.** Hero, How It Works, Contact, and a
+   persistent floating button all point at the same Calendly link. The site
+   has one job.
+5. **Built to last.** Copy and structure should be easy for Adam to edit
+   himself later — content lives in one config file, not scattered through
+   components.
 
 ## Non-goals
 
-- Not a template or product to be sold or open-sourced (unless decided
-  otherwise later).
-- Not chasing every trend — features and effects are added because they
-  serve the vision above, not because they're novel.
-- Not optimizing for a launch date. This project is allowed to move slowly
-  and be revisited.
+- Not a portfolio or personal showcase — every section earns its place by
+  serving the offer.
+- Not a multi-page site. Single scroll, no navigation menu.
+- Not hype-y or "guru"-styled — no countdown timers, no fake scarcity, no
+  stock photos of people pointing at charts.
 
 ## Relationship to other docs
 

@@ -10,9 +10,8 @@ years, maintained mostly by one person working intermittently.
 |---|---|
 | `components/ui` | shadcn/ui primitives (generated via the shadcn CLI). Edit these files directly when a primitive needs restyling — they're vendored source, not a library dependency. |
 | `components/layout` | Structural shell: header, footer, nav, page containers. |
-| `components/sections` | Composed, page-level sections built from `ui` + `motion` + `three`. |
-| `components/three` | Everything touching the R3F `<Canvas>` tree. |
-| `components/motion` | Reusable Framer Motion wrappers/variants. |
+| `components/sections` | Composed, page-level sections built from `ui` + `motion`. |
+| `components/motion` | Reusable Framer Motion wrappers/variants (including AmbientBackground). |
 | `hooks` | Cross-component custom hooks. |
 | `lib` | Framework-agnostic helpers/utilities (`cn`, formatting, etc.). |
 | `types` | Types shared across more than one module. |
@@ -26,9 +25,9 @@ in that component's file instead of promoting it to a shared folder.
 - Functional components only, `PascalCase` filenames matching the exported
   component name (`SiteHeader.tsx` → `SiteHeader`).
 - Server Components by default. Add `"use client"` only when a component
-  needs interactivity, browser APIs, hooks with client-only behavior, or
-  touches the R3F `<Canvas>` tree — and put that boundary as low in the
-  tree as possible rather than marking whole pages client-side.
+  needs interactivity, browser APIs, or client-only hooks — and put that
+  boundary as low in the tree as possible rather than marking whole pages
+  client-side.
 - Props are typed with an explicit `interface ComponentNameProps`, not
   inline object types, once there's more than one prop.
 - No default exports for components other than Next.js route files
@@ -53,24 +52,12 @@ in that component's file instead of promoting it to a shared folder.
 - Every animated component needs a `prefers-reduced-motion`-respecting path;
   bake that into the shared primitives rather than handling it ad hoc per use.
 
-## React Three Fiber
-
-- Keep scene graph components small and composable (a `Scene`, a `Lighting`
-  rig, a `Monogram` mesh) rather than one large monolithic canvas component.
-- Heavy assets (geometry, textures, HDRIs) load via drei loaders with
-  `Suspense` boundaries and a fallback that matches the design system, not a
-  bare spinner.
-- Dispose of/clean up any manually-created Three.js resources in `useEffect`
-  cleanup to avoid GPU memory leaks across route changes.
-- Keep `three`/`@react-three/*` imports out of Server Components entirely —
-  isolate them behind a client boundary and dynamically import with
-  `ssr: false` where the canvas isn't needed for initial paint.
-
 ## Accessibility
 
 - Every interactive element is reachable and operable by keyboard.
-- Decorative 3D/motion content is marked `aria-hidden`; any information it
-  conveys must also exist in an accessible, non-visual/non-motion form.
+- Decorative motion content (e.g. AmbientBackground) is marked
+  `aria-hidden`; any information it conveys must also exist in an
+  accessible, non-visual/non-motion form.
 - Images/icons that carry meaning get real `alt`/labels; purely decorative
   ones are hidden from assistive tech.
 
