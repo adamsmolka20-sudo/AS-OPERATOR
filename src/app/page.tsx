@@ -1,12 +1,25 @@
-import { HeroSceneLoader } from "@/components/three/HeroSceneLoader";
+import { AmbientBackground } from "@/components/motion/AmbientBackground";
+import { Hero } from "@/components/sections/Hero";
+import { WhatIDo } from "@/components/sections/WhatIDo";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { WhoThisIsFor } from "@/components/sections/WhoThisIsFor";
+import { Faq } from "@/components/sections/Faq";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/layout/Footer";
+import { StickyBookCall } from "@/components/layout/StickyBookCall";
 
 export default function Home() {
   return (
-    <main className="relative h-dvh w-full overflow-hidden bg-background">
-      <HeroSceneLoader />
-      <h1 className="absolute bottom-10 left-6 text-xs font-medium tracking-[0.3em] text-muted-foreground sm:bottom-12 sm:left-10">
-        AS OPERATOR
-      </h1>
+    <main className="relative">
+      <AmbientBackground />
+      <Hero />
+      <WhatIDo />
+      <HowItWorks />
+      <WhoThisIsFor />
+      <Faq />
+      <Contact />
+      <Footer />
+      <StickyBookCall />
     </main>
   );
 }
